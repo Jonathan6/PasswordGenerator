@@ -13,14 +13,35 @@ var specialGroup = "\" !#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
 generateBtn.addEventListener("click", start);
 
 function start() {
-  // ask user how long they want their password to be
-  let passLen = passwordLength();
-  // check boxes asking what characters they want their password to have
-  
-  // run generate password
+  let passLen;
+  let lower;
+  let upper;
+  let nums;
+  let special;
+
+  let gate = true;
+  while (gate) {
+    // ask user how long they want their password to be
+    passLen = passwordLength();
+    lower = confirm("Do you want lowercase characters?");
+    upper = confirm("Do you want uppercase characters?");
+    nums= confirm("Do you want numeric characters?");
+    special = confirm("Do you want uppercase characters?");
+
+    if (!(lower || upper || nums || special)) {
+      alert("We need at least 1 character type to generate the password. Try again");
+    } else {
+      let response = "Do these settings look good?\nLowercase: " + lower + "\nUppercase: " + upper + "\nNumbers: " + nums + "\nSpecial: " + special;
+      gate = !confirm(response);
+    }
+  }
+
+  //run generate password
+  let password = generatePassword(passLen, lower, upper, nums, special);
 
   // display the password
-
+  var passwordText = document.querySelector("#password");
+  passwordText.value = password;
 }
 
 function passwordLength() {
@@ -43,13 +64,8 @@ function passwordLength() {
   return passLen;
 }
 
-
-function generatePassword() {
+function generatePassword(passLen, lower, upper, nums, special) {
   let charGroup = "";
-  // let lower = boolean lower;
-  // let upper = boolean upper;
-  // let nums= boolean numbers;
-  // let special = boolean special;
 
   if (lower) {
     charGroup = charGroup + lowerGroup;
@@ -69,10 +85,10 @@ function generatePassword() {
 
 
   let answer = "";
-  // while (answer.length < how long the password needs to be) {
-  //   let temp = charGroup.charAt(Math.floor(Math.random() * charGroup.length));
-  //   answer = answer + temp;
-  // }
+  while (answer.length < passLen) {
+    let temp = charGroup.charAt(Math.floor(Math.random() * charGroup.length));
+    answer = answer + temp;
+  }
 
   return answer;
 }
@@ -92,7 +108,4 @@ function generatePassword() {
 function writePassword() {
 
   // var password = generatePassword();
-  // var passwordText = document.querySelector("#password");
-
-  // passwordText.value = password;
 }
