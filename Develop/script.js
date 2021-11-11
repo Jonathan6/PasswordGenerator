@@ -1,24 +1,27 @@
 // Assignment Code
+
+// Javascript set up
 var generateBtn = document.querySelector("#generate");
+generateBtn.addEventListener("click", start);
 
-
+// Character type groups
 var lowerGroup = "abcdefghijklmnopqrstuvwxyz";
 var upperGroup = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var numsGroup = "1234567890";
 var specialGroup = "\" !#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
 
-
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", start);
-
+// TODO : make it so that cancel stops the runtime 
+// TODO : make the options selected page cleaner
+// The main function the runs when the "Generate Password" button is clicked.
 function start() {
+  // Boolean values recording the type of characters the user wants
   let passLen;
   let lower;
   let upper;
   let nums;
   let special;
 
+  // While loops repeats until at least one character group is selected and the user is satisfied
   let gate = true;
   while (gate) {
     // ask user how long they want their password to be
@@ -44,6 +47,9 @@ function start() {
   passwordText.value = password;
 }
 
+// Input:   none
+// Output:  number - between 8 - 128 (includes both 8 and 128)
+// Asks the user how long their password will be. Does not take anything other than a number between 8-128.
 function passwordLength() {
   var passLen = Number(prompt("How long do you want your password to be? (8-128 char limit)", 12));
   while (!Number.isInteger(passLen) || passLen < 8 || passLen > 128) {
@@ -64,6 +70,9 @@ function passwordLength() {
   return passLen;
 }
 
+// Input:   passLen (number), lower (bool), upper (bool), nums (bool), special (bool)
+// Output:  string - the password with characters as specified with passLen length.
+// Takes in a number and 4 booleans and creates a random password based on the specifications.
 function generatePassword(passLen, lower, upper, nums, special) {
   let charGroup = "";
 
@@ -91,21 +100,4 @@ function generatePassword(passLen, lower, upper, nums, special) {
   }
 
   return answer;
-}
-
-
-/* <div class="card-options">
-<form action="/action_page.php" oninput="x.value=parseInt(a.value)">
-  8
-  <input type="range" id="a" name="a" value="50">
-  128 =
-  <output name="x" for="a b"></output>
-</form>
-</div> */
-
-
-
-function writePassword() {
-
-  // var password = generatePassword();
 }
