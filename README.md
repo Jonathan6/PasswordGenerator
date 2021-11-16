@@ -1,7 +1,7 @@
 # Password Generator
 
 ## Description
-
+A small website project that takes in user inputs to generate a random password based on the settings.
 
 
 ## Table of Contents
@@ -27,7 +27,7 @@
 <details>
 <summary>Click to Reveal</summary>
 
-[![Screenshot of Portfolio Website](assets/websitepreview.png)](https://jonathan6.github.io/Portfolio/)
+[![Screenshot of Password Generator Website](assets/websitepreview.png)](https://jonathan6.github.io/PasswordGenerator/)
 Click the preview to be redirected to the website!
 
 </details>
