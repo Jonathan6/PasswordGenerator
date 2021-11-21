@@ -6,21 +6,8 @@ A small website project that takes in user inputs to generate a random password 
 
 ## Table of Contents
 - [Description](#description)
-- [Reference Website](#reference-website)
 - [Portfolio Website Preview](#portfolio-website-preview)
-- [Cloning](#cloning)
-- [HTML Adjustments](#Wireframing/HTML)
-- [CSS Adjustments](#css)
 - [Conclusion](#conclusion)
-
-## Reference Website
-
-<details>
-<summary>Click to Reveal</summary>
-
-![Screenshot of Reference Website](assets/targetpreview.png)
-
-</details>
 
 ## Portfolio Website Preview
 
@@ -32,16 +19,5 @@ Click the preview to be redirected to the website!
 
 </details>
 
-## Cloning
-
-
-## Wireframing/HTML
-
-
-## CSS
- [Youtube guide](https://youtu.be/FEmysQARWFU) by 
-
-## Mobile Support
-
-
 ## Conclusion
+This project was a exercise to get familiar with JavaScript and working with object oriented programming languages again after spending most of my time recently working with HTML and CSS. The logic for the script consisted of asking for user input, randomly generating character to add onto a string to return as a password, and looping through user inputs until they provided what was asked for (to cleanse user inputs). Ultimately this was a pretty straight forward project with generating a random number being the most difficult line. I found that having a pseudocode foundation was important to plan out how my code was going to function and keeping me organized.

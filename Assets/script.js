@@ -1,5 +1,4 @@
 // Assignment Code
-
 // Javascript set up
 var generateBtn = document.querySelector("#generate");
 generateBtn.addEventListener("click", start);
@@ -29,12 +28,12 @@ function start() {
     lower = confirm("Do you want lowercase characters?");
     upper = confirm("Do you want uppercase characters?");
     nums= confirm("Do you want numeric characters?");
-    special = confirm("Do you want uppercase characters?");
+    special = confirm("Do you want special characters?");
 
     if (!(lower || upper || nums || special)) {
       alert("We need at least 1 character type to generate the password. Try again");
     } else {
-      let response = "Do these settings look good?\nLowercase: " + lower + "\nUppercase: " + upper + "\nNumbers: " + nums + "\nSpecial: " + special;
+      let response = "Do these settings look good? \nPassword Length: " + passLen + "\nLowercase: " + lower + "\nUppercase: " + upper + "\nNumbers: " + nums + "\nSpecial: " + special;
       gate = !confirm(response);
     }
   }
